@@ -2,8 +2,8 @@ const cors = require("cors");
 
 module.exports = (app) => {
   const whitelist = [
-    "https://w-15-clientx.netlify.app/",
-    "https://w-15-clienty.netlify.app/",
+    "https://w-15-clientx.netlify.app",
+    "https://w-15-clienty.netlify.app",
   ];
   const corsOptionsDelegate = (req, callback) => {
     let corsOptions;
@@ -11,7 +11,7 @@ module.exports = (app) => {
       corsOptions = {
         origin: true,
         methods:
-          req.header("Origin") === "https://w-15-clientx.netlify.app/"
+          req.header("Origin") === "https://w-15-clientx.netlify.app"
             ? ["GET", "POST"]
             : ["GET", "POST", "PUT", "DELETE"],
       };
